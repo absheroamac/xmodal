@@ -48,7 +48,11 @@ function App() {
               <label>Date of Birth:</label>
               <input id="dob" type="date" required></input>
 
-              <button id="submit-button" type="submit">
+              <button
+                id="submit-button"
+                className="submit-button"
+                type="submit"
+              >
                 Submit
               </button>
             </form>
