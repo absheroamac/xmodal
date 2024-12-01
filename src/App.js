@@ -7,15 +7,21 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const phoneNumber = e.target.phone.value + "";
+    const email = e.target.email.value.trim();
+    const phoneNumber = e.target.phone.value.trim();
     const dob = new Date(e.target.dob.value);
     const today = new Date();
 
-    if (phoneNumber.length !== 10) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      alert("Invalid email. Please enter a valid email address.");
+    } else if (phoneNumber.length !== 10 || isNaN(phoneNumber)) {
       alert("Invalid phone number. Please enter a 10-digit phone number.");
     } else if (dob > today) {
-      alert("Invalid date of birth. Date of birth cannot be in the future");
+      alert("Invalid date of birth. Date of birth cannot be in the future.");
     } else {
+      alert("Form submitted successfully!");
       setIsOpen(false);
     }
   };
