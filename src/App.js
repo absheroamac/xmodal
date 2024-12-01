@@ -42,7 +42,9 @@ function App() {
               <label>Date of Birth:</label>
               <input id="dob" type="date" required></input>
 
-              <button type="submit">Submit</button>
+              <button id="submit-button" type="submit">
+                Submit
+              </button>
             </form>
           </div>
         </div>
